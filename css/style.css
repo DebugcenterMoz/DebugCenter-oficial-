@@ -123,6 +123,40 @@ body {
     text-transform: uppercase;
 }
 
+/* Introducao interna */
+
+.introdution-interno {
+    width: 100%;
+    margin-top:222px;
+    color: #fff;
+    height: 290px;
+    text-align: center;
+    background-size: cover;
+    padding-top: 80px;
+}
+
+.introdution-interno p {
+   font-weight: bold;
+   padding-top: 40px;
+}
+
+.introdution-interno h1 {
+
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+.introdution-interno h1:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #fff;
+    margin: 14px auto 10px auto; 
+}
+
+
 /* Services */
 .servicos {
     padding: 60px 0;
@@ -212,6 +246,7 @@ body {
 .sobre_listas li {
     text-align: center;
     padding-top: 160px;
+    overflow: auto;
 }
 
 .sobre_listas li h3 {

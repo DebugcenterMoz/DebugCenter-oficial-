@@ -1,0 +1,41 @@
+.introdution-interno {
+    background: url("../img/bg3-sobre.jpg") no-repeat center;
+}
+
+.historia-sobre {
+    margin-top: 40px;
+
+}
+
+.historia-sobre p {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: .5em;
+    padding-right: 20px;
+}
+
+.subtitulo-interno {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: .1em;
+    margin-bottom: 20px;
+}
+
+.subtitulo-interno:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #000;
+    margin-top: 10px;
+}
+
+.historia-sobre ul li {
+    line-height: 30px;
+}
+
+.historia-sobre .equipe {
+    margin-top: 40px;
+}
