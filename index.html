@@ -494,6 +494,11 @@
             transition: opacity 0.08s ease, transform 0.08s ease;
         }
 
+        .hero-title .word {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
         .text-gradient {
             background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
@@ -1296,7 +1301,7 @@
 
         @keyframes ticker {
             from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+            to { transform: translateX(-25%); }
         }
 
         @keyframes submit-progress {
@@ -1326,6 +1331,11 @@
         }
 
         @media (min-width: 1024px) {
+            h1 {
+                font-size: clamp(3.1rem, 5vw, 5rem);
+                min-height: 0;
+            }
+
             .menu-toggle,
             .mobile-panel {
                 display: none;
@@ -1336,7 +1346,7 @@
             }
 
             .hero-grid {
-                grid-template-columns: minmax(0, 55%) minmax(360px, 45%);
+                grid-template-columns: minmax(0, 58%) minmax(340px, 42%);
             }
 
             .hero-visual {
@@ -1578,6 +1588,22 @@
                     <span class="tech-chip"><svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 14 0 7 7 0 0 0-14 0z"></path><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>TensorFlow</span>
                     <span class="tech-chip"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg>PostgreSQL</span>
                 </div>
+                <div class="ticker-group" aria-hidden="true">
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"></circle><ellipse cx="12" cy="12" rx="10" ry="4"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"></ellipse></svg>React</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><path d="M12 2 21 7v10l-9 5-9-5V7z"></path><path d="M8 9v6"></path><path d="M16 9v6"></path></svg>Node.js</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><path d="M12 4h5a3 3 0 0 1 0 6h-7a3 3 0 0 0 0 6h2"></path><path d="M12 20H7a3 3 0 0 1 0-6h7a3 3 0 0 0 0-6h-2"></path></svg>Python</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><path d="m4 12 8-8 8 8-8 8z"></path><path d="m9 12 3-3 3 3-3 3z"></path></svg>Flutter</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 14 0 7 7 0 0 0-14 0z"></path><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>TensorFlow</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg>PostgreSQL</span>
+                </div>
+                <div class="ticker-group" aria-hidden="true">
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"></circle><ellipse cx="12" cy="12" rx="10" ry="4"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"></ellipse></svg>React</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><path d="M12 2 21 7v10l-9 5-9-5V7z"></path><path d="M8 9v6"></path><path d="M16 9v6"></path></svg>Node.js</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><path d="M12 4h5a3 3 0 0 1 0 6h-7a3 3 0 0 0 0 6h2"></path><path d="M12 20H7a3 3 0 0 1 0-6h7a3 3 0 0 0 0-6h-2"></path></svg>Python</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><path d="m4 12 8-8 8 8-8 8z"></path><path d="m9 12 3-3 3 3-3 3z"></path></svg>Flutter</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 14 0 7 7 0 0 0-14 0z"></path><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>TensorFlow</span>
+                    <span class="tech-chip"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg>PostgreSQL</span>
+                </div>
             </div>
         </section>
 
@@ -1592,6 +1618,18 @@
             <div class="clients-ticker" aria-label="Logos dos clientes">
                 <div class="clients-track">
                     <div class="clients-group">
+                        <div class="client-logo"><img src="img/clients/A3silTech.png" alt="A3silTech" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/engchambers.svg" alt="EngChambers" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/logo.svg" alt="Parceiro" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/logotipo.jpg" alt="Parceiro" loading="lazy"></div>
+                    </div>
+                    <div class="clients-group" aria-hidden="true">
+                        <div class="client-logo"><img src="img/clients/A3silTech.png" alt="A3silTech" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/engchambers.svg" alt="EngChambers" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/logo.svg" alt="Parceiro" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/logotipo.jpg" alt="Parceiro" loading="lazy"></div>
+                    </div>
+                    <div class="clients-group" aria-hidden="true">
                         <div class="client-logo"><img src="img/clients/A3silTech.png" alt="A3silTech" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/engchambers.svg" alt="EngChambers" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/logo.svg" alt="Parceiro" loading="lazy"></div>
@@ -1830,18 +1868,33 @@
             if (!headline) return;
             const text = headline.dataset.typewriter;
             const highlight = "precisão";
-            const start = text.indexOf(highlight);
+            const highlightStart = text.indexOf(highlight);
             headline.innerHTML = "";
 
-            [...text].forEach((char, index) => {
-                const span = document.createElement("span");
-                span.className = "char";
-                span.textContent = char === " " ? "\u00A0" : char;
-                if (index >= start && index < start + highlight.length) {
-                    span.classList.add("text-gradient");
+            let i = 0;
+            while (i < text.length) {
+                if (text[i] === " ") {
+                    const spaceSpan = document.createElement("span");
+                    spaceSpan.className = "char";
+                    spaceSpan.textContent = "\u00A0";
+                    headline.appendChild(spaceSpan);
+                    i++;
+                } else {
+                    const wordSpan = document.createElement("span");
+                    wordSpan.className = "word";
+                    while (i < text.length && text[i] !== " ") {
+                        const span = document.createElement("span");
+                        span.className = "char";
+                        span.textContent = text[i];
+                        if (i >= highlightStart && i < highlightStart + highlight.length) {
+                            span.classList.add("text-gradient");
+                        }
+                        wordSpan.appendChild(span);
+                        i++;
+                    }
+                    headline.appendChild(wordSpan);
                 }
-                headline.appendChild(span);
-            });
+            }
 
             const letters = headline.querySelectorAll(".char");
             letters.forEach((letter, index) => {
