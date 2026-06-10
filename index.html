@@ -330,6 +330,33 @@
             box-shadow: inset 0 0 18px rgba(0, 212, 255, 0.05);
         }
 
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 12px;
+            border: 1px solid var(--accent-green);
+            border-radius: 4px;
+            background: transparent;
+            color: var(--accent-green);
+            font-family: var(--font-label);
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .lang-switch:hover {
+            color: var(--bg-primary);
+            background: var(--accent-green);
+            box-shadow: 0 0 18px rgba(0, 255, 136, 0.4);
+        }
+
+        .lang-switch-mobile {
+            justify-self: start;
+            margin-top: 18px;
+        }
+
         .menu-toggle {
             position: relative;
             z-index: 72;
@@ -1487,11 +1514,12 @@
         </a>
 
         <nav class="site-nav" aria-label="Navegação principal">
-            <a href="#servicos">Serviços</a>
-            <a href="#stats">Impacto</a>
-            <a href="#clientes">Clientes</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#contacto" class="nav-cta">Contacto</a>
+            <a href="#servicos" data-i18n="nav.services">Serviços</a>
+            <a href="#stats" data-i18n="nav.impact">Impacto</a>
+            <a href="#clientes" data-i18n="nav.clients">Clientes</a>
+            <a href="#sobre" data-i18n="nav.about">Sobre</a>
+            <a href="#contacto" class="nav-cta" data-i18n="nav.contact">Contacto</a>
+            <button class="lang-switch" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
         </nav>
 
         <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
@@ -1503,12 +1531,13 @@
 
     <div class="mobile-panel" id="mobile-menu" data-mobile-panel>
         <nav aria-label="Navegação mobile">
-            <a href="#inicio">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#stats">Impacto</a>
-            <a href="#clientes">Clientes</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#inicio" data-i18n="nav.home">Início</a>
+            <a href="#servicos" data-i18n="nav.services">Serviços</a>
+            <a href="#stats" data-i18n="nav.impact">Impacto</a>
+            <a href="#clientes" data-i18n="nav.clients">Clientes</a>
+            <a href="#sobre" data-i18n="nav.about">Sobre</a>
+            <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+            <button class="lang-switch lang-switch-mobile" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
         </nav>
     </div>
 
@@ -1516,14 +1545,14 @@
         <section class="hero" id="inicio">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <span class="eyebrow">Debugcenter / Moçambique</span>
+                    <span class="eyebrow" data-i18n="hero.eyebrow">Debugcenter / Moçambique</span>
                     <h1 class="hero-title glitch" data-text="Engenharia digital para empresas que exigem precisão" data-typewriter="Engenharia digital para empresas que exigem precisão">
                         Engenharia digital para empresas que exigem <span class="text-gradient">precisão</span>
                     </h1>
-                    <p>Construímos sites, aplicativos, sistemas web, agentes de IA e chatbots para negócios que precisam de tecnologia robusta, clara e pronta para crescer.</p>
+                    <p data-i18n="hero.copy">Construímos sites, aplicativos, sistemas web, agentes de IA e chatbots para negócios que precisam de tecnologia robusta, clara e pronta para crescer.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="#contacto">Iniciar projecto</a>
-                        <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+                        <a class="btn btn-primary" href="#contacto" data-i18n="hero.ctaStart">Iniciar projecto</a>
+                        <a class="btn btn-ghost" href="#servicos" data-i18n="hero.ctaServices">Ver serviços</a>
                     </div>
                 </div>
 
@@ -1556,15 +1585,15 @@
                 <div class="stats-grid reveal">
                     <article class="stat">
                         <span class="stat-number" data-count="50" data-suffix="+">0</span>
-                        <span class="stat-label">Projectos criados</span>
+                        <span class="stat-label" data-i18n="stats.projects">Projectos criados</span>
                     </article>
                     <article class="stat">
                         <span class="stat-number" data-count="3" data-suffix="+">0</span>
-                        <span class="stat-label">Anos de execução</span>
+                        <span class="stat-label" data-i18n="stats.years">Anos de execução</span>
                     </article>
                     <article class="stat">
                         <span class="stat-number" data-count="100" data-suffix="%">0</span>
-                        <span class="stat-label">Satisfação operacional</span>
+                        <span class="stat-label" data-i18n="stats.satisfaction">Satisfação operacional</span>
                     </article>
                 </div>
             </div>
@@ -1610,9 +1639,9 @@
         <section class="section" id="clientes">
             <div class="container">
                 <div class="section-heading reveal from-left">
-                    <span class="eyebrow">Clientes</span>
-                    <h2>Empresas que confiam no nosso trabalho.</h2>
-                    <p>Orgulhamo-nos de colaborar com parceiros que valorizam tecnologia bem feita e resultados reais.</p>
+                    <span class="eyebrow" data-i18n="clients.eyebrow">Clientes</span>
+                    <h2 data-i18n="clients.title">Empresas que confiam no nosso trabalho.</h2>
+                    <p data-i18n="clients.desc">Orgulhamo-nos de colaborar com parceiros que valorizam tecnologia bem feita e resultados reais.</p>
                 </div>
             </div>
             <div class="clients-ticker" aria-label="Logos dos clientes">
@@ -1648,58 +1677,58 @@
         <section class="section services" id="servicos">
             <div class="container">
                 <div class="section-heading reveal from-left">
-                    <span class="eyebrow">Serviços</span>
-                    <h2>Sistemas digitais com acabamento de laboratório e foco de negócio.</h2>
-                    <p>Da presença online ao atendimento automatizado, cada solução é desenhada para ser útil, escalável e alinhada à operação real do cliente.</p>
+                    <span class="eyebrow" data-i18n="services.eyebrow">Serviços</span>
+                    <h2 data-i18n="services.title">Sistemas digitais com acabamento de laboratório e foco de negócio.</h2>
+                    <p data-i18n="services.desc">Da presença online ao atendimento automatizado, cada solução é desenhada para ser útil, escalável e alinhada à operação real do cliente.</p>
                 </div>
 
                 <div class="services-grid">
                     <article class="service-card reveal">
                         <div class="service-top"><span class="service-number">01</span></div>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"></path><path d="m8 9 3 3-3 3"></path><path d="M13 15h4"></path></svg></div>
-                        <h3>Criação de Sites</h3>
-                        <p>Sites modernos, responsivos e rápidos, feitos para representar a identidade da empresa com clareza e presença.</p>
-                        <a href="#contacto">Solicitar análise</a>
+                        <h3 data-i18n="svc1.title">Criação de Sites</h3>
+                        <p data-i18n="svc1.desc">Sites modernos, responsivos e rápidos, feitos para representar a identidade da empresa com clareza e presença.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
                     </article>
 
                     <article class="service-card reveal">
                         <div class="service-top"><span class="service-number">02</span></div>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></div>
-                        <h3>Aplicativos Móveis</h3>
-                        <p>Apps para Android e iOS com experiência limpa, arquitetura estável e funcionalidades pensadas para o dia a dia.</p>
-                        <a href="#contacto">Solicitar análise</a>
+                        <h3 data-i18n="svc2.title">Aplicativos Móveis</h3>
+                        <p data-i18n="svc2.desc">Apps para Android e iOS com experiência limpa, arquitetura estável e funcionalidades pensadas para o dia a dia.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
                     </article>
 
                     <article class="service-card reveal">
                         <div class="service-top"><span class="service-number">03</span><span class="card-badge">Trending</span></div>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v6H4z"></path><path d="M4 14h7v6H4z"></path><path d="M15 14h5v6h-5z"></path></svg></div>
-                        <h3>Sistemas Web Completos</h3>
-                        <p>ERPs, CRMs, dashboards, lojas online e plataformas internas sob medida para controlar processos sem ruído.</p>
-                        <a href="#contacto">Solicitar análise</a>
+                        <h3 data-i18n="svc3.title">Sistemas Web Completos</h3>
+                        <p data-i18n="svc3.desc">ERPs, CRMs, dashboards, lojas online e plataformas internas sob medida para controlar processos sem ruído.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
                     </article>
 
                     <article class="service-card reveal">
-                        <div class="service-top"><span class="service-number">04</span><span class="card-badge">IA</span></div>
+                        <div class="service-top"><span class="service-number">04</span><span class="card-badge" data-i18n="badge.ai">IA</span></div>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><circle cx="5" cy="6" r="2"></circle><circle cx="19" cy="6" r="2"></circle><circle cx="5" cy="18" r="2"></circle><circle cx="19" cy="18" r="2"></circle><path d="m7 7.5 3 2.5"></path><path d="m17 7.5-3 2.5"></path><path d="m7 16.5 3-2.5"></path><path d="m17 16.5-3-2.5"></path></svg></div>
-                        <h3>Agentes de IA</h3>
-                        <p>Agentes para executar tarefas, consultar dados, automatizar fluxos e apoiar decisões com integração aos sistemas certos.</p>
-                        <a href="#contacto">Solicitar análise</a>
+                        <h3 data-i18n="svc4.title">Agentes de IA</h3>
+                        <p data-i18n="svc4.desc">Agentes para executar tarefas, consultar dados, automatizar fluxos e apoiar decisões com integração aos sistemas certos.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
                     </article>
 
                     <article class="service-card reveal">
-                        <div class="service-top"><span class="service-number">05</span><span class="card-badge">IA</span></div>
+                        <div class="service-top"><span class="service-number">05</span><span class="card-badge" data-i18n="badge.ai">IA</span></div>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 8h14v9H8l-3 3z"></path><path d="M9 11h.01"></path><path d="M12 11h.01"></path><path d="M15 11h.01"></path><path d="M12 5v3"></path><path d="M9 3h6"></path></svg></div>
-                        <h3>Chatbots Inteligentes</h3>
-                        <p>Atendimento 24/7, captação de leads e suporte automatizado em canais como WhatsApp, website e aplicações.</p>
-                        <a href="#contacto">Solicitar análise</a>
+                        <h3 data-i18n="svc5.title">Chatbots Inteligentes</h3>
+                        <p data-i18n="svc5.desc">Atendimento 24/7, captação de leads e suporte automatizado em canais como WhatsApp, website e aplicações.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
                     </article>
 
                     <article class="service-card reveal">
                         <div class="service-top"><span class="service-number">06</span></div>
                         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 7 9 2 7 4l5 5"></path><path d="M5 19 19 5"></path><path d="m15 19 4-4"></path><path d="m5 15 4 4"></path></svg></div>
-                        <h3>Serviços Técnicos</h3>
-                        <p>Montagem, manutenção, reparação e suporte técnico para computadores e infraestrutura de TI.</p>
-                        <a href="#contacto">Solicitar análise</a>
+                        <h3 data-i18n="svc6.title">Serviços Técnicos</h3>
+                        <p data-i18n="svc6.desc">Montagem, manutenção, reparação e suporte técnico para computadores e infraestrutura de TI.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
                     </article>
                 </div>
             </div>
@@ -1708,8 +1737,8 @@
         <section class="section" id="escolher">
             <div class="container">
                 <div class="section-heading reveal from-right">
-                    <span class="eyebrow">Por que nos escolher?</span>
-                    <h2>Precisão técnica, proximidade e entrega sem teatro.</h2>
+                    <span class="eyebrow" data-i18n="why.eyebrow">Por que nos escolher?</span>
+                    <h2 data-i18n="why.title">Precisão técnica, proximidade e entrega sem teatro.</h2>
                 </div>
 
                 <div class="why-layout reveal" data-why-line>
@@ -1717,23 +1746,23 @@
                     <div class="why-grid">
                         <article class="why-item">
                             <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6z"></path><path d="m9 12 2 2 4-5"></path></svg></div>
-                            <h3>Soluções personalizadas</h3>
-                            <p>O projecto parte dos processos, metas e restrições reais do cliente.</p>
+                            <h3 data-i18n="why1.title">Soluções personalizadas</h3>
+                            <p data-i18n="why1.desc">O projecto parte dos processos, metas e restrições reais do cliente.</p>
                         </article>
                         <article class="why-item">
                             <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"></path><path d="M12 3v4"></path><path d="m18.4 6.6-2.8 2.8"></path><path d="m5.6 6.6 2.8 2.8"></path><path d="M7 17h10"></path><path d="M9 21h6"></path></svg></div>
-                            <h3>Tecnologia actual</h3>
-                            <p>Escolhemos ferramentas modernas sem complicar o que deve ser simples.</p>
+                            <h3 data-i18n="why2.title">Tecnologia actual</h3>
+                            <p data-i18n="why2.desc">Escolhemos ferramentas modernas sem complicar o que deve ser simples.</p>
                         </article>
                         <article class="why-item">
                             <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0v4a2 2 0 0 1-2 2h-2"></path><path d="M6 12v5"></path><path d="M18 12v5"></path><path d="M9 19h6"></path></svg></div>
-                            <h3>Suporte contínuo</h3>
-                            <p>Acompanhamos manutenção, melhoria e evolução depois da entrega.</p>
+                            <h3 data-i18n="why3.title">Suporte contínuo</h3>
+                            <p data-i18n="why3.desc">Acompanhamos manutenção, melhoria e evolução depois da entrega.</p>
                         </article>
                         <article class="why-item">
                             <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div>
-                            <h3>Entrega no prazo</h3>
-                            <p>Planeamento claro, comunicação directa e execução responsável.</p>
+                            <h3 data-i18n="why4.title">Entrega no prazo</h3>
+                            <p data-i18n="why4.desc">Planeamento claro, comunicação directa e execução responsável.</p>
                         </article>
                     </div>
                 </div>
@@ -1743,20 +1772,20 @@
         <section class="section" id="sobre">
             <div class="container about-grid">
                 <div class="about-copy reveal from-left">
-                    <span class="eyebrow">Sobre nós</span>
-                    <h2>Uma equipa a transformar problemas em software útil.</h2>
-                    <p>A Debugcenter nasceu da vontade de aproximar empresas de soluções digitais bem feitas. Desenvolvemos tecnologia com foco em clareza, personalização, automação e suporte próximo.</p>
-                    <p>Trabalhamos como um laboratório de engenharia: entendemos o problema, desenhamos o sistema, validamos a experiência e entregamos algo que o negócio consiga usar todos os dias.</p>
+                    <span class="eyebrow" data-i18n="about.eyebrow">Sobre nós</span>
+                    <h2 data-i18n="about.title">Uma equipa a transformar problemas em software útil.</h2>
+                    <p data-i18n="about.p1">A Debugcenter nasceu da vontade de aproximar empresas de soluções digitais bem feitas. Desenvolvemos tecnologia com foco em clareza, personalização, automação e suporte próximo.</p>
+                    <p data-i18n="about.p2">Trabalhamos como um laboratório de engenharia: entendemos o problema, desenhamos o sistema, validamos a experiência e entregamos algo que o negócio consiga usar todos os dias.</p>
                 </div>
 
                 <div class="mission-board reveal from-right">
                     <article class="mission-cell">
-                        <h3>Missão</h3>
-                        <p>Criar soluções digitais completas que simplificam operações, aproximam empresas dos seus clientes e transformam ideias em resultados concretos.</p>
+                        <h3 data-i18n="about.missionT">Missão</h3>
+                        <p data-i18n="about.missionD">Criar soluções digitais completas que simplificam operações, aproximam empresas dos seus clientes e transformam ideias em resultados concretos.</p>
                     </article>
                     <article class="mission-cell">
-                        <h3>Visão</h3>
-                        <p>Ser uma referência moçambicana em software, automação inteligente e serviços de TI orientados ao crescimento das empresas.</p>
+                        <h3 data-i18n="about.visionT">Visão</h3>
+                        <p data-i18n="about.visionD">Ser uma referência moçambicana em software, automação inteligente e serviços de TI orientados ao crescimento das empresas.</p>
                     </article>
                 </div>
             </div>
@@ -1770,43 +1799,43 @@
 
                     <div class="field">
                         <input type="text" id="nome" name="nome" autocomplete="name" placeholder=" " required>
-                        <label class="form-label" for="nome">Nome</label>
+                        <label class="form-label" for="nome" data-i18n="form.name">Nome</label>
                     </div>
 
                     <div class="field">
                         <input type="email" id="email" name="email" autocomplete="email" placeholder=" " required>
-                        <label class="form-label" for="email">Email</label>
+                        <label class="form-label" for="email" data-i18n="form.email">Email</label>
                     </div>
 
                     <div class="field">
                         <select id="servico" name="servico" required>
                             <option value="" selected disabled></option>
-                            <option>Criação de Sites</option>
-                            <option>Aplicativos Móveis</option>
-                            <option>Sistemas Web Completos</option>
-                            <option>Agentes de Inteligência Artificial</option>
-                            <option>Chatbots Inteligentes</option>
-                            <option>Serviços Técnicos</option>
+                            <option data-i18n="form.opt1">Criação de Sites</option>
+                            <option data-i18n="form.opt2">Aplicativos Móveis</option>
+                            <option data-i18n="form.opt3">Sistemas Web Completos</option>
+                            <option data-i18n="form.opt4">Agentes de Inteligência Artificial</option>
+                            <option data-i18n="form.opt5">Chatbots Inteligentes</option>
+                            <option data-i18n="form.opt6">Serviços Técnicos</option>
                         </select>
-                        <label class="form-label" for="servico">Serviço de interesse</label>
+                        <label class="form-label" for="servico" data-i18n="form.service">Serviço de interesse</label>
                     </div>
 
                     <div class="field">
                         <textarea id="mensagem" name="mensagem" placeholder=" " required></textarea>
-                        <label class="form-label" for="mensagem">Mensagem</label>
+                        <label class="form-label" for="mensagem" data-i18n="form.message">Mensagem</label>
                     </div>
 
                     <button class="btn btn-primary submit-btn" type="submit" data-submit-btn>
-                        Enviar mensagem
+                        <span data-i18n="form.submit">Enviar mensagem</span>
                         <span class="progress" aria-hidden="true"></span>
                     </button>
                 </form>
 
                 <div class="contact-side reveal from-right">
                     <div class="section-heading">
-                        <span class="eyebrow">Contacto</span>
-                        <h2>Vamos mapear o seu próximo sistema?</h2>
-                        <p>Envie a ideia, problema ou objectivo. A equipa responde com uma proposta clara e alinhada ao seu negócio.</p>
+                        <span class="eyebrow" data-i18n="contact.eyebrow">Contacto</span>
+                        <h2 data-i18n="contact.title">Vamos mapear o seu próximo sistema?</h2>
+                        <p data-i18n="contact.desc">Envie a ideia, problema ou objectivo. A equipa responde com uma proposta clara e alinhada ao seu negócio.</p>
                     </div>
 
                     <div>
@@ -1820,7 +1849,7 @@
                         </div>
                         <div class="contact-line">
                             <svg viewBox="0 0 24 24"><path d="M12 22s7-4.35 7-12a7 7 0 0 0-14 0c0 7.65 7 12 7 12z"></path><circle cx="12" cy="10" r="2"></circle></svg>
-                            <span>Moçambique</span>
+                            <span data-i18n="contact.location">Moçambique</span>
                         </div>
                     </div>
 
@@ -1835,7 +1864,7 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <span>Debugcenter © 2026</span>
-            <span>Sites / Apps / Sistemas / IA / TI</span>
+            <span data-i18n="footer.tag">Sites / Apps / Sistemas / IA / TI</span>
         </div>
     </footer>
 
@@ -1847,6 +1876,202 @@
         const headline = document.querySelector("[data-typewriter]");
         const terminal = document.querySelector("[data-terminal]");
         const submitButton = document.querySelector("[data-submit-btn]");
+
+        const translations = {
+            pt: {
+                "nav.home": "Início",
+                "nav.services": "Serviços",
+                "nav.impact": "Impacto",
+                "nav.clients": "Clientes",
+                "nav.about": "Sobre",
+                "nav.contact": "Contacto",
+                "hero.eyebrow": "Debugcenter / Moçambique",
+                "hero.headline": "Engenharia digital para empresas que exigem precisão",
+                "hero.highlight": "precisão",
+                "hero.copy": "Construímos sites, aplicativos, sistemas web, agentes de IA e chatbots para negócios que precisam de tecnologia robusta, clara e pronta para crescer.",
+                "hero.ctaStart": "Iniciar projecto",
+                "hero.ctaServices": "Ver serviços",
+                "stats.projects": "Projectos criados",
+                "stats.years": "Anos de execução",
+                "stats.satisfaction": "Satisfação operacional",
+                "clients.eyebrow": "Clientes",
+                "clients.title": "Empresas que confiam no nosso trabalho.",
+                "clients.desc": "Orgulhamo-nos de colaborar com parceiros que valorizam tecnologia bem feita e resultados reais.",
+                "services.eyebrow": "Serviços",
+                "services.title": "Sistemas digitais com acabamento de laboratório e foco de negócio.",
+                "services.desc": "Da presença online ao atendimento automatizado, cada solução é desenhada para ser útil, escalável e alinhada à operação real do cliente.",
+                "badge.ai": "IA",
+                "svc.cta": "Solicitar análise",
+                "svc1.title": "Criação de Sites",
+                "svc1.desc": "Sites modernos, responsivos e rápidos, feitos para representar a identidade da empresa com clareza e presença.",
+                "svc2.title": "Aplicativos Móveis",
+                "svc2.desc": "Apps para Android e iOS com experiência limpa, arquitetura estável e funcionalidades pensadas para o dia a dia.",
+                "svc3.title": "Sistemas Web Completos",
+                "svc3.desc": "ERPs, CRMs, dashboards, lojas online e plataformas internas sob medida para controlar processos sem ruído.",
+                "svc4.title": "Agentes de IA",
+                "svc4.desc": "Agentes para executar tarefas, consultar dados, automatizar fluxos e apoiar decisões com integração aos sistemas certos.",
+                "svc5.title": "Chatbots Inteligentes",
+                "svc5.desc": "Atendimento 24/7, captação de leads e suporte automatizado em canais como WhatsApp, website e aplicações.",
+                "svc6.title": "Serviços Técnicos",
+                "svc6.desc": "Montagem, manutenção, reparação e suporte técnico para computadores e infraestrutura de TI.",
+                "why.eyebrow": "Por que nos escolher?",
+                "why.title": "Precisão técnica, proximidade e entrega sem teatro.",
+                "why1.title": "Soluções personalizadas",
+                "why1.desc": "O projecto parte dos processos, metas e restrições reais do cliente.",
+                "why2.title": "Tecnologia actual",
+                "why2.desc": "Escolhemos ferramentas modernas sem complicar o que deve ser simples.",
+                "why3.title": "Suporte contínuo",
+                "why3.desc": "Acompanhamos manutenção, melhoria e evolução depois da entrega.",
+                "why4.title": "Entrega no prazo",
+                "why4.desc": "Planeamento claro, comunicação directa e execução responsável.",
+                "about.eyebrow": "Sobre nós",
+                "about.title": "Uma equipa a transformar problemas em software útil.",
+                "about.p1": "A Debugcenter nasceu da vontade de aproximar empresas de soluções digitais bem feitas. Desenvolvemos tecnologia com foco em clareza, personalização, automação e suporte próximo.",
+                "about.p2": "Trabalhamos como um laboratório de engenharia: entendemos o problema, desenhamos o sistema, validamos a experiência e entregamos algo que o negócio consiga usar todos os dias.",
+                "about.missionT": "Missão",
+                "about.missionD": "Criar soluções digitais completas que simplificam operações, aproximam empresas dos seus clientes e transformam ideias em resultados concretos.",
+                "about.visionT": "Visão",
+                "about.visionD": "Ser uma referência moçambicana em software, automação inteligente e serviços de TI orientados ao crescimento das empresas.",
+                "form.name": "Nome",
+                "form.email": "Email",
+                "form.service": "Serviço de interesse",
+                "form.message": "Mensagem",
+                "form.submit": "Enviar mensagem",
+                "form.opt1": "Criação de Sites",
+                "form.opt2": "Aplicativos Móveis",
+                "form.opt3": "Sistemas Web Completos",
+                "form.opt4": "Agentes de Inteligência Artificial",
+                "form.opt5": "Chatbots Inteligentes",
+                "form.opt6": "Serviços Técnicos",
+                "contact.eyebrow": "Contacto",
+                "contact.title": "Vamos mapear o seu próximo sistema?",
+                "contact.desc": "Envie a ideia, problema ou objectivo. A equipa responde com uma proposta clara e alinhada ao seu negócio.",
+                "contact.location": "Moçambique",
+                "footer.tag": "Sites / Apps / Sistemas / IA / TI",
+                "doc.title": "Debugcenter | Engenharia digital, IA e software em Moçambique",
+                "terminal": [
+                    "Iniciando Debugcenter...",
+                    "Carregando serviços: [████████████] 100%",
+                    "Sites criados: 50+",
+                    "Clientes satisfeitos: ∞",
+                    "Status: ONLINE ✓"
+                ]
+            },
+            en: {
+                "nav.home": "Home",
+                "nav.services": "Services",
+                "nav.impact": "Impact",
+                "nav.clients": "Clients",
+                "nav.about": "About",
+                "nav.contact": "Contact",
+                "hero.eyebrow": "Debugcenter / Mozambique",
+                "hero.headline": "Digital engineering for companies that demand precision",
+                "hero.highlight": "precision",
+                "hero.copy": "We build websites, apps, web systems, AI agents and chatbots for businesses that need robust, clear technology ready to scale.",
+                "hero.ctaStart": "Start a project",
+                "hero.ctaServices": "View services",
+                "stats.projects": "Projects delivered",
+                "stats.years": "Years in operation",
+                "stats.satisfaction": "Operational satisfaction",
+                "clients.eyebrow": "Clients",
+                "clients.title": "Companies that trust our work.",
+                "clients.desc": "We're proud to collaborate with partners who value well-built technology and real results.",
+                "services.eyebrow": "Services",
+                "services.title": "Digital systems with lab-grade finish and business focus.",
+                "services.desc": "From your online presence to automated support, each solution is designed to be useful, scalable and aligned with how the client actually operates.",
+                "badge.ai": "AI",
+                "svc.cta": "Request analysis",
+                "svc1.title": "Website Development",
+                "svc1.desc": "Modern, responsive and fast websites built to represent your company's identity with clarity and presence.",
+                "svc2.title": "Mobile Apps",
+                "svc2.desc": "Android and iOS apps with a clean experience, stable architecture and features designed for everyday use.",
+                "svc3.title": "Complete Web Systems",
+                "svc3.desc": "ERPs, CRMs, dashboards, online stores and internal platforms tailored to control processes without noise.",
+                "svc4.title": "AI Agents",
+                "svc4.desc": "Agents that run tasks, query data, automate workflows and support decisions with integration into the right systems.",
+                "svc5.title": "Intelligent Chatbots",
+                "svc5.desc": "24/7 service, lead capture and automated support across channels like WhatsApp, websites and applications.",
+                "svc6.title": "Technical Services",
+                "svc6.desc": "Assembly, maintenance, repair and technical support for computers and IT infrastructure.",
+                "why.eyebrow": "Why choose us?",
+                "why.title": "Technical precision, closeness and delivery without theatrics.",
+                "why1.title": "Tailored solutions",
+                "why1.desc": "The project starts from the client's real processes, goals and constraints.",
+                "why2.title": "Current technology",
+                "why2.desc": "We pick modern tools without overcomplicating what should be simple.",
+                "why3.title": "Ongoing support",
+                "why3.desc": "We handle maintenance, improvement and evolution after delivery.",
+                "why4.title": "On-time delivery",
+                "why4.desc": "Clear planning, direct communication and responsible execution.",
+                "about.eyebrow": "About us",
+                "about.title": "A team turning problems into useful software.",
+                "about.p1": "Debugcenter was born from the will to bring companies closer to well-built digital solutions. We develop technology focused on clarity, personalization, automation and close support.",
+                "about.p2": "We work like an engineering lab: we understand the problem, design the system, validate the experience and deliver something the business can use every day.",
+                "about.missionT": "Mission",
+                "about.missionD": "To create complete digital solutions that simplify operations, bring companies closer to their customers and turn ideas into concrete results.",
+                "about.visionT": "Vision",
+                "about.visionD": "To be a Mozambican reference in software, intelligent automation and IT services oriented to business growth.",
+                "form.name": "Name",
+                "form.email": "Email",
+                "form.service": "Service of interest",
+                "form.message": "Message",
+                "form.submit": "Send message",
+                "form.opt1": "Website Development",
+                "form.opt2": "Mobile Apps",
+                "form.opt3": "Complete Web Systems",
+                "form.opt4": "Artificial Intelligence Agents",
+                "form.opt5": "Intelligent Chatbots",
+                "form.opt6": "Technical Services",
+                "contact.eyebrow": "Contact",
+                "contact.title": "Shall we map out your next system?",
+                "contact.desc": "Send your idea, problem or goal. The team replies with a clear proposal aligned with your business.",
+                "contact.location": "Mozambique",
+                "footer.tag": "Sites / Apps / Systems / AI / IT",
+                "doc.title": "Debugcenter | Digital engineering, AI and software in Mozambique",
+                "terminal": [
+                    "Starting Debugcenter...",
+                    "Loading services: [████████████] 100%",
+                    "Sites built: 50+",
+                    "Happy clients: ∞",
+                    "Status: ONLINE ✓"
+                ]
+            }
+        };
+
+        let currentLang = localStorage.getItem("lang") === "en" ? "en" : "pt";
+
+        function applyLang(lang) {
+            currentLang = translations[lang] ? lang : "pt";
+            const dict = translations[currentLang];
+            document.documentElement.lang = currentLang === "en" ? "en" : "pt-MZ";
+            document.title = dict["doc.title"];
+
+            document.querySelectorAll("[data-i18n]").forEach((el) => {
+                const value = dict[el.dataset.i18n];
+                if (typeof value === "string") el.textContent = value;
+            });
+
+            document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {
+                btn.textContent = currentLang === "en" ? "PT" : "EN";
+                btn.setAttribute("aria-label", currentLang === "en" ? "Mudar para Português" : "Switch to English");
+            });
+
+            try {
+                localStorage.setItem("lang", currentLang);
+            } catch (error) {
+                /* storage unavailable */
+            }
+        }
+
+        document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                applyLang(currentLang === "en" ? "pt" : "en");
+                runHeadlineTypewriter();
+                runTerminal();
+            });
+        });
+
+        applyLang(currentLang);
 
         function setMenuState(isOpen) {
             menuToggle.classList.toggle("is-open", isOpen);
@@ -1866,8 +2091,11 @@
 
         function runHeadlineTypewriter() {
             if (!headline) return;
-            const text = headline.dataset.typewriter;
-            const highlight = "precisão";
+            const dict = translations[currentLang];
+            const text = dict["hero.headline"];
+            const highlight = dict["hero.highlight"];
+            headline.dataset.typewriter = text;
+            headline.dataset.text = text;
             const highlightStart = text.indexOf(highlight);
             headline.innerHTML = "";
 
@@ -1904,13 +2132,7 @@
 
         function runTerminal() {
             if (!terminal) return;
-            const lines = [
-                "Iniciando Debugcenter...",
-                "Carregando serviços: [████████████] 100%",
-                "Sites criados: 50+",
-                "Clientes satisfeitos: ∞",
-                "Status: ONLINE ✓"
-            ].join("\n");
+            const lines = translations[currentLang]["terminal"].join("\n");
             let index = 0;
 
             const type = () => {
@@ -2061,6 +2283,7 @@
 
         window.addEventListener("load", () => {
             body.classList.add("is-loaded");
+            applyLang(currentLang);
             document.querySelectorAll(".glitch").forEach((item) => {
                 item.classList.add("is-glitching");
                 setTimeout(() => item.classList.remove("is-glitching"), 900);
