@@ -1229,6 +1229,30 @@
             display: none;
         }
 
+        .hp-field {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .form-status {
+            margin-top: 14px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            display: none;
+        }
+
+        .form-status.is-visible {
+            display: block;
+        }
+
+        .form-status.is-success {
+            color: #2ecc71;
+        }
+
+        .form-status.is-error {
+            color: #ff5c5c;
+        }
+
         .site-footer {
             padding: 34px var(--page-pad);
             border-top: 1px solid var(--border-glow);
@@ -1651,24 +1675,28 @@
                         <div class="client-logo"><img src="img/clients/engchambers.svg" alt="EngChambers" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/logo.svg" alt="Parceiro" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/logotipo.jpg" alt="Parceiro" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/Aguas-puras.jpeg" alt="Águas Pura" loading="lazy"></div>
                     </div>
                     <div class="clients-group" aria-hidden="true">
                         <div class="client-logo"><img src="img/clients/A3silTech.png" alt="A3silTech" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/engchambers.svg" alt="EngChambers" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/logo.svg" alt="Parceiro" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/logotipo.jpg" alt="Parceiro" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/Aguas-puras.jpeg" alt="Águas Pura" loading="lazy"></div>
                     </div>
                     <div class="clients-group" aria-hidden="true">
                         <div class="client-logo"><img src="img/clients/A3silTech.png" alt="A3silTech" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/engchambers.svg" alt="EngChambers" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/logo.svg" alt="Parceiro" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/logotipo.jpg" alt="Parceiro" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/Aguas-puras.jpeg" alt="Águas Pura" loading="lazy"></div>
                     </div>
                     <div class="clients-group" aria-hidden="true">
                         <div class="client-logo"><img src="img/clients/A3silTech.png" alt="A3silTech" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/engchambers.svg" alt="EngChambers" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/logo.svg" alt="Parceiro" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/logotipo.jpg" alt="Parceiro" loading="lazy"></div>
+                        <div class="client-logo"><img src="img/clients/Aguas-puras.jpeg" alt="Águas Pura" loading="lazy"></div>
                     </div>
                 </div>
             </div>
@@ -1793,9 +1821,9 @@
 
         <section class="section contact" id="contacto">
             <div class="container contact-grid">
-                <form class="contact-form reveal from-left" name="contacto-debugcenter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="contacto-debugcenter">
-                    <p class="hidden"><label>Não preencha este campo: <input name="bot-field"></label></p>
+                <form class="contact-form reveal from-left" id="contact-form" method="POST" action="https://formspree.io/f/xaqglerz">
+                    <input type="hidden" name="_subject" value="Novo contacto pelo site DebugCenter">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
 
                     <div class="field">
                         <input type="text" id="nome" name="nome" autocomplete="name" placeholder=" " required>
@@ -1829,6 +1857,8 @@
                         <span data-i18n="form.submit">Enviar mensagem</span>
                         <span class="progress" aria-hidden="true"></span>
                     </button>
+
+                    <p class="form-status" data-form-status role="status" aria-live="polite"></p>
                 </form>
 
                 <div class="contact-side reveal from-right">
@@ -1845,7 +1875,7 @@
                         </div>
                         <div class="contact-line">
                             <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"></path><path d="m4 7 8 6 8-6"></path></svg>
-                            <a href="mailto:Debugcenter@gmail.com">Debugcenter@gmail.com</a>
+                            <a href="mailto:debugcenter1@gmail.com">debugcenter1@gmail.com</a>
                         </div>
                         <div class="contact-line">
                             <svg viewBox="0 0 24 24"><path d="M12 22s7-4.35 7-12a7 7 0 0 0-14 0c0 7.65 7 12 7 12z"></path><circle cx="12" cy="10" r="2"></circle></svg>
@@ -1937,6 +1967,8 @@
                 "form.service": "Serviço de interesse",
                 "form.message": "Mensagem",
                 "form.submit": "Enviar mensagem",
+                "form.success": "Mensagem enviada com sucesso! Entraremos em contacto em breve.",
+                "form.error": "Não foi possível enviar a mensagem. Tente novamente ou escreva para debugcenter1@gmail.com.",
                 "form.opt1": "Criação de Sites",
                 "form.opt2": "Aplicativos Móveis",
                 "form.opt3": "Sistemas Web Completos",
@@ -2016,6 +2048,8 @@
                 "form.service": "Service of interest",
                 "form.message": "Message",
                 "form.submit": "Send message",
+                "form.success": "Message sent successfully! We'll get back to you soon.",
+                "form.error": "We couldn't send your message. Please try again or email debugcenter1@gmail.com.",
                 "form.opt1": "Website Development",
                 "form.opt2": "Mobile Apps",
                 "form.opt3": "Complete Web Systems",
@@ -2181,10 +2215,44 @@
             document.querySelectorAll("[data-count]").forEach(animateCount);
         }
 
-        if (submitButton) {
-            submitButton.closest("form").addEventListener("submit", () => {
+        const contactForm = document.getElementById("contact-form");
+        if (contactForm && submitButton) {
+            const statusEl = contactForm.querySelector("[data-form-status]");
+
+            const setStatus = (key, type) => {
+                if (!statusEl) return;
+                const dict = translations[currentLang] || translations.pt;
+                statusEl.textContent = dict[key];
+                statusEl.classList.remove("is-success", "is-error");
+                statusEl.classList.add("is-visible", type === "success" ? "is-success" : "is-error");
+            };
+
+            contactForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
                 submitButton.classList.add("is-loading");
                 submitButton.setAttribute("aria-busy", "true");
+                if (statusEl) statusEl.classList.remove("is-visible");
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: "POST",
+                        body: new FormData(contactForm),
+                        headers: { Accept: "application/json" }
+                    });
+
+                    if (response.ok) {
+                        setStatus("form.success", "success");
+                        contactForm.reset();
+                    } else {
+                        setStatus("form.error", "error");
+                    }
+                } catch (err) {
+                    setStatus("form.error", "error");
+                } finally {
+                    submitButton.classList.remove("is-loading");
+                    submitButton.removeAttribute("aria-busy");
+                }
             });
         }
 
