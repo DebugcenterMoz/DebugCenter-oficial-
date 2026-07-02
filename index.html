@@ -805,6 +805,64 @@
             max-width: 720px;
         }
 
+        .faq-list {
+            display: grid;
+            gap: 14px;
+            max-width: 860px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            background: rgba(13, 31, 53, 0.5);
+            overflow: hidden;
+            transition: border-color 0.25s ease;
+        }
+
+        .faq-item[open] {
+            border-color: rgba(0, 212, 255, 0.35);
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            padding: 20px 24px;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            color: var(--text-primary);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: color 0.2s ease;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            color: var(--accent-cyan);
+            font-size: 1.5rem;
+            line-height: 1;
+            transition: transform 0.25s ease;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item summary:hover {
+            color: var(--accent-cyan);
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
         .clients-ticker {
             padding: 22px 0;
             overflow: hidden;
@@ -1590,6 +1648,68 @@
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Serviços Técnicos de TI" } }
             ]
           }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://debugcenter.site/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Quanto custa criar um site ou aplicativo em Moçambique?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O investimento depende do âmbito de cada projeto — um site institucional, uma loja online e um sistema web completo têm complexidades diferentes. Fazemos uma análise gratuita e enviamos uma proposta clara, sem custos escondidos, adaptada ao orçamento da sua empresa."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quanto tempo demora a desenvolver um projeto?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Um site institucional pode ficar pronto em 1 a 3 semanas; aplicativos e sistemas web completos levam entre 4 e 12 semanas, conforme as funcionalidades. Definimos prazos realistas logo na proposta e mantemos comunicação em cada etapa."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "A Debugcenter desenvolve aplicativos para Android e iOS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Desenvolvemos aplicativos móveis para Android e iOS, com experiência limpa, arquitetura estável e funcionalidades pensadas para o uso real do dia a dia do seu negócio."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que é um agente de IA e como pode ajudar o meu negócio?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Um agente de IA é um sistema que executa tarefas, consulta dados e automatiza fluxos por si. Na prática, pode responder clientes, gerar relatórios, organizar informação e apoiar decisões — libertando a sua equipa do trabalho repetitivo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "É possível ter um chatbot no WhatsApp para atendimento automático?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Criamos chatbots inteligentes para WhatsApp, site e aplicações, com atendimento 24/7, captação de leads e respostas automáticas, integrados aos seus sistemas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "A Debugcenter atende empresas em todo o Moçambique?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Trabalhamos com empresas em todo o Moçambique de forma remota, e presencialmente sempre que o projeto exige. A localização não é um limite para entregar tecnologia bem feita."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Oferecem manutenção e suporte após a entrega?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Não desaparecemos após a entrega: oferecemos manutenção, atualizações e suporte técnico próximo para manter o seu sistema estável e a evoluir com o negócio."
+              }
+            }
+          ]
         }
       ]
     }
@@ -1621,6 +1741,7 @@
             <a href="#stats" data-i18n="nav.impact">Impacto</a>
             <a href="#clientes" data-i18n="nav.clients">Clientes</a>
             <a href="#sobre" data-i18n="nav.about">Sobre</a>
+            <a href="#faq" data-i18n="nav.faq">FAQ</a>
             <a href="#contacto" class="nav-cta" data-i18n="nav.contact">Contacto</a>
             <button class="lang-switch" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
         </nav>
@@ -1639,6 +1760,7 @@
             <a href="#stats" data-i18n="nav.impact">Impacto</a>
             <a href="#clientes" data-i18n="nav.clients">Clientes</a>
             <a href="#sobre" data-i18n="nav.about">Sobre</a>
+            <a href="#faq" data-i18n="nav.faq">FAQ</a>
             <a href="#contacto" data-i18n="nav.contact">Contacto</a>
             <button class="lang-switch lang-switch-mobile" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
         </nav>
@@ -1898,6 +2020,47 @@
             </div>
         </section>
 
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-heading reveal from-left">
+                    <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
+                    <h2 data-i18n="faq.title">Perguntas frequentes sobre os nossos serviços.</h2>
+                    <p data-i18n="faq.desc">Respostas rápidas às dúvidas mais comuns de quem procura sites, apps, sistemas e IA em Moçambique.</p>
+                </div>
+
+                <div class="faq-list reveal">
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q1">Quanto custa criar um site ou aplicativo em Moçambique?</summary>
+                        <p class="faq-answer" data-i18n="faq.a1">O investimento depende do âmbito de cada projeto — um site institucional, uma loja online e um sistema web completo têm complexidades diferentes. Fazemos uma análise gratuita e enviamos uma proposta clara, sem custos escondidos, adaptada ao orçamento da sua empresa.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q2">Quanto tempo demora a desenvolver um projeto?</summary>
+                        <p class="faq-answer" data-i18n="faq.a2">Um site institucional pode ficar pronto em 1 a 3 semanas; aplicativos e sistemas web completos levam entre 4 e 12 semanas, conforme as funcionalidades. Definimos prazos realistas logo na proposta e mantemos comunicação em cada etapa.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q3">A Debugcenter desenvolve aplicativos para Android e iOS?</summary>
+                        <p class="faq-answer" data-i18n="faq.a3">Sim. Desenvolvemos aplicativos móveis para Android e iOS, com experiência limpa, arquitetura estável e funcionalidades pensadas para o uso real do dia a dia do seu negócio.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q4">O que é um agente de IA e como pode ajudar o meu negócio?</summary>
+                        <p class="faq-answer" data-i18n="faq.a4">Um agente de IA é um sistema que executa tarefas, consulta dados e automatiza fluxos por si. Na prática, pode responder clientes, gerar relatórios, organizar informação e apoiar decisões — libertando a sua equipa do trabalho repetitivo.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q5">É possível ter um chatbot no WhatsApp para atendimento automático?</summary>
+                        <p class="faq-answer" data-i18n="faq.a5">Sim. Criamos chatbots inteligentes para WhatsApp, site e aplicações, com atendimento 24/7, captação de leads e respostas automáticas, integrados aos seus sistemas.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q6">A Debugcenter atende empresas em todo o Moçambique?</summary>
+                        <p class="faq-answer" data-i18n="faq.a6">Sim. Trabalhamos com empresas em todo o Moçambique de forma remota, e presencialmente sempre que o projeto exige. A localização não é um limite para entregar tecnologia bem feita.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q7">Oferecem manutenção e suporte após a entrega?</summary>
+                        <p class="faq-answer" data-i18n="faq.a7">Sim. Não desaparecemos após a entrega: oferecemos manutenção, atualizações e suporte técnico próximo para manter o seu sistema estável e a evoluir com o negócio.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <section class="section contact" id="contacto">
             <div class="container contact-grid">
                 <form class="contact-form reveal from-left" id="contact-form" method="POST" action="https://formspree.io/f/xaqglerz">
@@ -1993,6 +2156,7 @@
                 "nav.impact": "Impacto",
                 "nav.clients": "Clientes",
                 "nav.about": "Sobre",
+                "nav.faq": "FAQ",
                 "nav.contact": "Contacto",
                 "hero.eyebrow": "Debugcenter / Moçambique",
                 "hero.headline": "Engenharia digital para empresas que exigem precisão",
@@ -2058,6 +2222,23 @@
                 "contact.title": "Vamos mapear o seu próximo sistema?",
                 "contact.desc": "Envie a ideia, problema ou objectivo. A equipa responde com uma proposta clara e alinhada ao seu negócio.",
                 "contact.location": "Moçambique",
+                "faq.eyebrow": "FAQ",
+                "faq.title": "Perguntas frequentes sobre os nossos serviços.",
+                "faq.desc": "Respostas rápidas às dúvidas mais comuns de quem procura sites, apps, sistemas e IA em Moçambique.",
+                "faq.q1": "Quanto custa criar um site ou aplicativo em Moçambique?",
+                "faq.a1": "O investimento depende do âmbito de cada projeto — um site institucional, uma loja online e um sistema web completo têm complexidades diferentes. Fazemos uma análise gratuita e enviamos uma proposta clara, sem custos escondidos, adaptada ao orçamento da sua empresa.",
+                "faq.q2": "Quanto tempo demora a desenvolver um projeto?",
+                "faq.a2": "Um site institucional pode ficar pronto em 1 a 3 semanas; aplicativos e sistemas web completos levam entre 4 e 12 semanas, conforme as funcionalidades. Definimos prazos realistas logo na proposta e mantemos comunicação em cada etapa.",
+                "faq.q3": "A Debugcenter desenvolve aplicativos para Android e iOS?",
+                "faq.a3": "Sim. Desenvolvemos aplicativos móveis para Android e iOS, com experiência limpa, arquitetura estável e funcionalidades pensadas para o uso real do dia a dia do seu negócio.",
+                "faq.q4": "O que é um agente de IA e como pode ajudar o meu negócio?",
+                "faq.a4": "Um agente de IA é um sistema que executa tarefas, consulta dados e automatiza fluxos por si. Na prática, pode responder clientes, gerar relatórios, organizar informação e apoiar decisões — libertando a sua equipa do trabalho repetitivo.",
+                "faq.q5": "É possível ter um chatbot no WhatsApp para atendimento automático?",
+                "faq.a5": "Sim. Criamos chatbots inteligentes para WhatsApp, site e aplicações, com atendimento 24/7, captação de leads e respostas automáticas, integrados aos seus sistemas.",
+                "faq.q6": "A Debugcenter atende empresas em todo o Moçambique?",
+                "faq.a6": "Sim. Trabalhamos com empresas em todo o Moçambique de forma remota, e presencialmente sempre que o projeto exige. A localização não é um limite para entregar tecnologia bem feita.",
+                "faq.q7": "Oferecem manutenção e suporte após a entrega?",
+                "faq.a7": "Sim. Não desaparecemos após a entrega: oferecemos manutenção, atualizações e suporte técnico próximo para manter o seu sistema estável e a evoluir com o negócio.",
                 "footer.tag": "Sites / Apps / Sistemas / IA / TI",
                 "doc.title": "Debugcenter | Criação de Sites, Apps e IA em Moçambique",
                 "terminal": [
@@ -2074,6 +2255,7 @@
                 "nav.impact": "Impact",
                 "nav.clients": "Clients",
                 "nav.about": "About",
+                "nav.faq": "FAQ",
                 "nav.contact": "Contact",
                 "hero.eyebrow": "Debugcenter / Mozambique",
                 "hero.headline": "Digital engineering for companies that demand precision",
@@ -2139,6 +2321,23 @@
                 "contact.title": "Shall we map out your next system?",
                 "contact.desc": "Send your idea, problem or goal. The team replies with a clear proposal aligned with your business.",
                 "contact.location": "Mozambique",
+                "faq.eyebrow": "FAQ",
+                "faq.title": "Frequently asked questions about our services.",
+                "faq.desc": "Quick answers to the most common questions from those looking for websites, apps, systems and AI in Mozambique.",
+                "faq.q1": "How much does it cost to build a website or app in Mozambique?",
+                "faq.a1": "The investment depends on each project's scope — an institutional website, an online store and a complete web system have different complexities. We run a free analysis and send a clear proposal, with no hidden costs, tailored to your company's budget.",
+                "faq.q2": "How long does it take to develop a project?",
+                "faq.a2": "An institutional website can be ready in 1 to 3 weeks; apps and complete web systems take between 4 and 12 weeks, depending on the features. We set realistic deadlines in the proposal and keep you updated at every stage.",
+                "faq.q3": "Does Debugcenter build apps for Android and iOS?",
+                "faq.a3": "Yes. We build mobile apps for Android and iOS, with a clean experience, stable architecture and features designed for your business's real daily use.",
+                "faq.q4": "What is an AI agent and how can it help my business?",
+                "faq.a4": "An AI agent is a system that performs tasks, queries data and automates workflows for you. In practice, it can answer customers, generate reports, organise information and support decisions — freeing your team from repetitive work.",
+                "faq.q5": "Can I have a WhatsApp chatbot for automatic customer service?",
+                "faq.a5": "Yes. We build intelligent chatbots for WhatsApp, websites and apps, with 24/7 service, lead capture and automatic replies, integrated with your systems.",
+                "faq.q6": "Does Debugcenter serve companies across all of Mozambique?",
+                "faq.a6": "Yes. We work with companies across all of Mozambique remotely, and on-site whenever the project requires it. Location is no barrier to delivering well-built technology.",
+                "faq.q7": "Do you offer maintenance and support after delivery?",
+                "faq.a7": "Yes. We don't disappear after delivery: we offer maintenance, updates and close technical support to keep your system stable and evolving with your business.",
                 "footer.tag": "Sites / Apps / Systems / AI / IT",
                 "doc.title": "Debugcenter | Website, App & AI Development in Mozambique",
                 "terminal": [
