@@ -1050,6 +1050,163 @@
             text-transform: uppercase;
         }
 
+        .products {
+            background: linear-gradient(180deg, rgba(10, 22, 40, 0.32), rgba(5, 10, 15, 0));
+        }
+
+        .products-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .product-card {
+            position: relative;
+            padding: clamp(24px, 3.4vw, 34px);
+            overflow: hidden;
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            background:
+                linear-gradient(145deg, rgba(13, 31, 53, 0.92), rgba(10, 22, 40, 0.52)),
+                linear-gradient(rgba(0, 212, 255, 0.045) 1px, transparent 1px);
+            background-size: auto, 100% 34px;
+            transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out, transform 0.3s ease-out;
+        }
+
+        .product-card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+            transform: translateX(-102%);
+            transition: transform 0.3s ease-out;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: var(--glow-cyan), 0 24px 60px rgba(0, 0, 0, 0.35);
+            transform: translateY(-5px);
+        }
+
+        .product-card:hover::after {
+            transform: translateX(0);
+        }
+
+        .product-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .product-id {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .product-logo {
+            display: grid;
+            flex-shrink: 0;
+            width: 52px;
+            aspect-ratio: 1;
+            place-items: center;
+            border: 1px solid var(--accent-cyan);
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.18), rgba(123, 47, 255, 0.13));
+            box-shadow: var(--glow-cyan);
+            color: var(--accent-cyan);
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .product-tag {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--accent-green);
+            font-family: var(--font-label);
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .product-card h3 {
+            color: var(--text-primary);
+        }
+
+        .product-tagline {
+            margin-bottom: 16px;
+            color: var(--accent-cyan);
+            font-style: italic;
+        }
+
+        .product-card > p {
+            margin-bottom: 22px;
+        }
+
+        .product-features {
+            display: grid;
+            gap: 11px;
+            margin: 0 0 22px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .product-features li {
+            position: relative;
+            padding-left: 28px;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        .product-features li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.28em;
+            width: 15px;
+            height: 15px;
+            border: 1px solid var(--accent-green);
+            border-radius: 4px;
+            background: rgba(0, 255, 136, 0.08);
+        }
+
+        .product-features li::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 0.5em;
+            width: 7px;
+            height: 4px;
+            border-left: 2px solid var(--accent-green);
+            border-bottom: 2px solid var(--accent-green);
+            transform: rotate(-45deg);
+        }
+
+        .product-meta {
+            display: grid;
+            gap: 6px;
+            margin-bottom: 22px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            color: var(--text-secondary);
+            font-family: var(--font-label);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 900px) {
+            .products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
         .tech-ticker {
             padding: 22px 0;
             overflow: hidden;
@@ -1650,6 +1807,32 @@
           }
         },
         {
+          "@type": "SoftwareApplication",
+          "@id": "https://controlla.cloud/#software",
+          "name": "Controlla",
+          "url": "https://controlla.cloud/",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "Plataforma de gestão empresarial na nuvem para pequenas e médias empresas: inventário, vendas, finanças, fornecedores e permissões de equipa.",
+          "creator": { "@id": "https://debugcenter.site/#organization" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "MZN",
+            "description": "Teste gratuito de 30 dias, sem cartão de crédito."
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://hubhouse.debugcenter.site/#software",
+          "name": "HubHouse",
+          "url": "https://hubhouse.debugcenter.site/",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "Web",
+          "description": "Plataforma de classificados imobiliários que liga proprietários a pessoas à procura de casa, apartamento, quarto ou terreno em Moçambique.",
+          "creator": { "@id": "https://debugcenter.site/#organization" }
+        },
+        {
           "@type": "FAQPage",
           "@id": "https://debugcenter.site/#faq",
           "mainEntity": [
@@ -1738,6 +1921,7 @@
 
         <nav class="site-nav" aria-label="Navegação principal">
             <a href="#servicos" data-i18n="nav.services">Serviços</a>
+            <a href="#produtos" data-i18n="nav.products">Produtos</a>
             <a href="#stats" data-i18n="nav.impact">Impacto</a>
             <a href="#clientes" data-i18n="nav.clients">Clientes</a>
             <a href="#sobre" data-i18n="nav.about">Sobre</a>
@@ -1757,6 +1941,7 @@
         <nav aria-label="Navegação mobile">
             <a href="#inicio" data-i18n="nav.home">Início</a>
             <a href="#servicos" data-i18n="nav.services">Serviços</a>
+            <a href="#produtos" data-i18n="nav.products">Produtos</a>
             <a href="#stats" data-i18n="nav.impact">Impacto</a>
             <a href="#clientes" data-i18n="nav.clients">Clientes</a>
             <a href="#sobre" data-i18n="nav.about">Sobre</a>
@@ -1801,6 +1986,144 @@
                             <div class="terminal-output" data-terminal></div><span class="terminal-caret"></span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section services" id="servicos">
+            <div class="container">
+                <div class="section-heading reveal from-left">
+                    <span class="eyebrow" data-i18n="services.eyebrow">Serviços</span>
+                    <h2 data-i18n="services.title">Sistemas digitais com acabamento de laboratório e foco de negócio.</h2>
+                    <p data-i18n="services.desc">Da presença online ao atendimento automatizado, cada solução é desenhada para ser útil, escalável e alinhada à operação real do cliente.</p>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card reveal">
+                        <div class="service-top"><span class="service-number">01</span></div>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"></path><path d="m8 9 3 3-3 3"></path><path d="M13 15h4"></path></svg></div>
+                        <h3 data-i18n="svc1.title">Criação de Sites</h3>
+                        <p data-i18n="svc1.desc">Sites modernos, responsivos e rápidos, feitos para representar a identidade da empresa com clareza e presença.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-top"><span class="service-number">02</span></div>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></div>
+                        <h3 data-i18n="svc2.title">Aplicativos Móveis</h3>
+                        <p data-i18n="svc2.desc">Apps para Android e iOS com experiência limpa, arquitetura estável e funcionalidades pensadas para o dia a dia.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-top"><span class="service-number">03</span><span class="card-badge">Trending</span></div>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v6H4z"></path><path d="M4 14h7v6H4z"></path><path d="M15 14h5v6h-5z"></path></svg></div>
+                        <h3 data-i18n="svc3.title">Sistemas Web Completos</h3>
+                        <p data-i18n="svc3.desc">ERPs, CRMs, dashboards, lojas online e plataformas internas sob medida para controlar processos sem ruído.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-top"><span class="service-number">04</span><span class="card-badge" data-i18n="badge.ai">IA</span></div>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><circle cx="5" cy="6" r="2"></circle><circle cx="19" cy="6" r="2"></circle><circle cx="5" cy="18" r="2"></circle><circle cx="19" cy="18" r="2"></circle><path d="m7 7.5 3 2.5"></path><path d="m17 7.5-3 2.5"></path><path d="m7 16.5 3-2.5"></path><path d="m17 16.5-3-2.5"></path></svg></div>
+                        <h3 data-i18n="svc4.title">Agentes de IA</h3>
+                        <p data-i18n="svc4.desc">Agentes para executar tarefas, consultar dados, automatizar fluxos e apoiar decisões com integração aos sistemas certos.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-top"><span class="service-number">05</span><span class="card-badge" data-i18n="badge.ai">IA</span></div>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 8h14v9H8l-3 3z"></path><path d="M9 11h.01"></path><path d="M12 11h.01"></path><path d="M15 11h.01"></path><path d="M12 5v3"></path><path d="M9 3h6"></path></svg></div>
+                        <h3 data-i18n="svc5.title">Chatbots Inteligentes</h3>
+                        <p data-i18n="svc5.desc">Atendimento 24/7, captação de leads e suporte automatizado em canais como WhatsApp, website e aplicações.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-top"><span class="service-number">06</span></div>
+                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 7 9 2 7 4l5 5"></path><path d="M5 19 19 5"></path><path d="m15 19 4-4"></path><path d="m5 15 4 4"></path></svg></div>
+                        <h3 data-i18n="svc6.title">Serviços Técnicos</h3>
+                        <p data-i18n="svc6.desc">Montagem, manutenção, reparação e suporte técnico para computadores e infraestrutura de TI.</p>
+                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section products" id="produtos">
+            <div class="container">
+                <div class="section-heading reveal from-left">
+                    <span class="eyebrow" data-i18n="prod.eyebrow">Produtos Debugcenter</span>
+                    <h2 data-i18n="prod.title">Também construímos e mantemos os nossos próprios produtos.</h2>
+                    <p data-i18n="prod.desc">Para além dos projectos para clientes, operamos software próprio em produção — prova viva do que a nossa engenharia consegue entregar e sustentar no dia a dia.</p>
+                </div>
+
+                <div class="products-grid">
+                    <article class="product-card reveal">
+                        <div class="product-top">
+                            <div class="product-id">
+                                <span class="product-logo" aria-hidden="true">CTL</span>
+                                <div>
+                                    <span class="product-tag" data-i18n="prod1.tag">SaaS · Gestão empresarial</span>
+                                    <h3>Controlla</h3>
+                                </div>
+                            </div>
+                            <span class="status-pulse" data-i18n="prod.live">Em produção</span>
+                        </div>
+
+                        <p class="product-tagline" data-i18n="prod1.tagline">"Gestão simples para quem tem negócio a sério."</p>
+                        <p data-i18n="prod1.desc">Plataforma de gestão empresarial na nuvem para pequenas e médias empresas moçambicanas. Funciona directamente no navegador, sem instalação nem cartão de crédito, e centraliza stock, vendas, finanças, fornecedores e permissões de equipa num único painel.</p>
+
+                        <ul class="product-features">
+                            <li data-i18n="prod1.f1">Inventário em tempo real, com alertas automáticos de stock baixo</li>
+                            <li data-i18n="prod1.f2">Vendas e ponto de venda (PDV) rápido, com desempenho diário, semanal e mensal</li>
+                            <li data-i18n="prod1.f3">Fluxo de caixa e finanças: receitas, despesas e análise de lucro</li>
+                            <li data-i18n="prod1.f4">Gestão de fornecedores e planeamento de compras</li>
+                            <li data-i18n="prod1.f5">Relatórios e dashboards visuais sobre receita e produtos mais vendidos</li>
+                            <li data-i18n="prod1.f6">Controlo de acesso por utilizador, com permissões por função</li>
+                            <li data-i18n="prod1.f7">Backups automáticos na nuvem e dados encriptados</li>
+                        </ul>
+
+                        <div class="product-meta">
+                            <span data-i18n="prod1.for">Feito para lojas de retalho, restaurantes, armazéns, distribuidoras, farmácias e papelarias.</span>
+                            <span data-i18n="prod1.trial">30 dias grátis, sem necessidade de cartão de crédito.</span>
+                        </div>
+
+                        <a class="btn btn-primary" href="https://controlla.cloud/" target="_blank" rel="noopener" data-i18n="prod1.cta">Aceder ao Controlla</a>
+                    </article>
+
+                    <article class="product-card reveal">
+                        <div class="product-top">
+                            <div class="product-id">
+                                <span class="product-logo" aria-hidden="true">HH</span>
+                                <div>
+                                    <span class="product-tag" data-i18n="prod2.tag">Marketplace · Imobiliário</span>
+                                    <h3>HubHouse</h3>
+                                </div>
+                            </div>
+                            <span class="status-pulse" data-i18n="prod.live">Em produção</span>
+                        </div>
+
+                        <p class="product-tagline" data-i18n="prod2.tagline">"A plataforma que mais cresce em Moçambique."</p>
+                        <p data-i18n="prod2.desc">Plataforma de classificados imobiliários que liga proprietários a pessoas à procura de casa, apartamento, quarto ou terreno em todo o país. Foco em simplicidade, segurança e imóveis verificados.</p>
+
+                        <ul class="product-features">
+                            <li data-i18n="prod2.f1">Pesquisa por localização, tipo de imóvel e faixa de preço</li>
+                            <li data-i18n="prod2.f2">Modos separados para comprar e para arrendar</li>
+                            <li data-i18n="prod2.f3">Mapa interactivo para navegar pelos imóveis disponíveis</li>
+                            <li data-i18n="prod2.f4">Imóveis auditados e verificados antes de publicados</li>
+                            <li data-i18n="prod2.f5">Destaques para novos anúncios em zonas populares</li>
+                            <li data-i18n="prod2.f6">Painel do utilizador para publicar e gerir anúncios</li>
+                            <li data-i18n="prod2.f7">Contacto directo com o anunciante via WhatsApp</li>
+                        </ul>
+
+                        <div class="product-meta">
+                            <span data-i18n="prod2.for">Feito para proprietários que querem anunciar e para quem procura a próxima casa em Moçambique.</span>
+                            <span data-i18n="prod2.note">O HubHouse não é uma agência imobiliária: não participa nas negociações nem em transacções financeiras entre utilizadores.</span>
+                        </div>
+
+                        <a class="btn btn-primary" href="https://hubhouse.debugcenter.site/" target="_blank" rel="noopener" data-i18n="prod2.cta">Explorar o HubHouse</a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -1899,66 +2222,6 @@
                         <div class="client-logo"><img src="img/clients/logotipo.jpg" alt="Parceiro" loading="lazy"></div>
                         <div class="client-logo"><img src="img/clients/Aguas-puras.jpeg" alt="Águas Pura" loading="lazy"></div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section services" id="servicos">
-            <div class="container">
-                <div class="section-heading reveal from-left">
-                    <span class="eyebrow" data-i18n="services.eyebrow">Serviços</span>
-                    <h2 data-i18n="services.title">Sistemas digitais com acabamento de laboratório e foco de negócio.</h2>
-                    <p data-i18n="services.desc">Da presença online ao atendimento automatizado, cada solução é desenhada para ser útil, escalável e alinhada à operação real do cliente.</p>
-                </div>
-
-                <div class="services-grid">
-                    <article class="service-card reveal">
-                        <div class="service-top"><span class="service-number">01</span></div>
-                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"></path><path d="m8 9 3 3-3 3"></path><path d="M13 15h4"></path></svg></div>
-                        <h3 data-i18n="svc1.title">Criação de Sites</h3>
-                        <p data-i18n="svc1.desc">Sites modernos, responsivos e rápidos, feitos para representar a identidade da empresa com clareza e presença.</p>
-                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-top"><span class="service-number">02</span></div>
-                        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></div>
-                        <h3 data-i18n="svc2.title">Aplicativos Móveis</h3>
-                        <p data-i18n="svc2.desc">Apps para Android e iOS com experiência limpa, arquitetura estável e funcionalidades pensadas para o dia a dia.</p>
-                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-top"><span class="service-number">03</span><span class="card-badge">Trending</span></div>
-                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v6H4z"></path><path d="M4 14h7v6H4z"></path><path d="M15 14h5v6h-5z"></path></svg></div>
-                        <h3 data-i18n="svc3.title">Sistemas Web Completos</h3>
-                        <p data-i18n="svc3.desc">ERPs, CRMs, dashboards, lojas online e plataformas internas sob medida para controlar processos sem ruído.</p>
-                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-top"><span class="service-number">04</span><span class="card-badge" data-i18n="badge.ai">IA</span></div>
-                        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><circle cx="5" cy="6" r="2"></circle><circle cx="19" cy="6" r="2"></circle><circle cx="5" cy="18" r="2"></circle><circle cx="19" cy="18" r="2"></circle><path d="m7 7.5 3 2.5"></path><path d="m17 7.5-3 2.5"></path><path d="m7 16.5 3-2.5"></path><path d="m17 16.5-3-2.5"></path></svg></div>
-                        <h3 data-i18n="svc4.title">Agentes de IA</h3>
-                        <p data-i18n="svc4.desc">Agentes para executar tarefas, consultar dados, automatizar fluxos e apoiar decisões com integração aos sistemas certos.</p>
-                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-top"><span class="service-number">05</span><span class="card-badge" data-i18n="badge.ai">IA</span></div>
-                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 8h14v9H8l-3 3z"></path><path d="M9 11h.01"></path><path d="M12 11h.01"></path><path d="M15 11h.01"></path><path d="M12 5v3"></path><path d="M9 3h6"></path></svg></div>
-                        <h3 data-i18n="svc5.title">Chatbots Inteligentes</h3>
-                        <p data-i18n="svc5.desc">Atendimento 24/7, captação de leads e suporte automatizado em canais como WhatsApp, website e aplicações.</p>
-                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-top"><span class="service-number">06</span></div>
-                        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 7 9 2 7 4l5 5"></path><path d="M5 19 19 5"></path><path d="m15 19 4-4"></path><path d="m5 15 4 4"></path></svg></div>
-                        <h3 data-i18n="svc6.title">Serviços Técnicos</h3>
-                        <p data-i18n="svc6.desc">Montagem, manutenção, reparação e suporte técnico para computadores e infraestrutura de TI.</p>
-                        <a href="#contacto" data-i18n="svc.cta">Solicitar análise</a>
-                    </article>
                 </div>
             </div>
         </section>
@@ -2153,6 +2416,7 @@
             pt: {
                 "nav.home": "Início",
                 "nav.services": "Serviços",
+                "nav.products": "Produtos",
                 "nav.impact": "Impacto",
                 "nav.clients": "Clientes",
                 "nav.about": "Sobre",
@@ -2187,6 +2451,36 @@
                 "svc5.desc": "Atendimento 24/7, captação de leads e suporte automatizado em canais como WhatsApp, website e aplicações.",
                 "svc6.title": "Serviços Técnicos",
                 "svc6.desc": "Montagem, manutenção, reparação e suporte técnico para computadores e infraestrutura de TI.",
+                "prod.eyebrow": "Produtos Debugcenter",
+                "prod.title": "Também construímos e mantemos os nossos próprios produtos.",
+                "prod.desc": "Para além dos projectos para clientes, operamos software próprio em produção — prova viva do que a nossa engenharia consegue entregar e sustentar no dia a dia.",
+                "prod.live": "Em produção",
+                "prod1.tag": "SaaS · Gestão empresarial",
+                "prod1.tagline": "“Gestão simples para quem tem negócio a sério.”",
+                "prod1.desc": "Plataforma de gestão empresarial na nuvem para pequenas e médias empresas moçambicanas. Funciona directamente no navegador, sem instalação nem cartão de crédito, e centraliza stock, vendas, finanças, fornecedores e permissões de equipa num único painel.",
+                "prod1.f1": "Inventário em tempo real, com alertas automáticos de stock baixo",
+                "prod1.f2": "Vendas e ponto de venda (PDV) rápido, com desempenho diário, semanal e mensal",
+                "prod1.f3": "Fluxo de caixa e finanças: receitas, despesas e análise de lucro",
+                "prod1.f4": "Gestão de fornecedores e planeamento de compras",
+                "prod1.f5": "Relatórios e dashboards visuais sobre receita e produtos mais vendidos",
+                "prod1.f6": "Controlo de acesso por utilizador, com permissões por função",
+                "prod1.f7": "Backups automáticos na nuvem e dados encriptados",
+                "prod1.for": "Feito para lojas de retalho, restaurantes, armazéns, distribuidoras, farmácias e papelarias.",
+                "prod1.trial": "30 dias grátis, sem necessidade de cartão de crédito.",
+                "prod1.cta": "Aceder ao Controlla",
+                "prod2.tag": "Marketplace · Imobiliário",
+                "prod2.tagline": "“A plataforma que mais cresce em Moçambique.”",
+                "prod2.desc": "Plataforma de classificados imobiliários que liga proprietários a pessoas à procura de casa, apartamento, quarto ou terreno em todo o país. Foco em simplicidade, segurança e imóveis verificados.",
+                "prod2.f1": "Pesquisa por localização, tipo de imóvel e faixa de preço",
+                "prod2.f2": "Modos separados para comprar e para arrendar",
+                "prod2.f3": "Mapa interactivo para navegar pelos imóveis disponíveis",
+                "prod2.f4": "Imóveis auditados e verificados antes de publicados",
+                "prod2.f5": "Destaques para novos anúncios em zonas populares",
+                "prod2.f6": "Painel do utilizador para publicar e gerir anúncios",
+                "prod2.f7": "Contacto directo com o anunciante via WhatsApp",
+                "prod2.for": "Feito para proprietários que querem anunciar e para quem procura a próxima casa em Moçambique.",
+                "prod2.note": "O HubHouse não é uma agência imobiliária: não participa nas negociações nem em transacções financeiras entre utilizadores.",
+                "prod2.cta": "Explorar o HubHouse",
                 "why.eyebrow": "Por que nos escolher?",
                 "why.title": "Precisão técnica, proximidade e entrega sem teatro.",
                 "why1.title": "Soluções personalizadas",
@@ -2252,6 +2546,7 @@
             en: {
                 "nav.home": "Home",
                 "nav.services": "Services",
+                "nav.products": "Products",
                 "nav.impact": "Impact",
                 "nav.clients": "Clients",
                 "nav.about": "About",
@@ -2286,6 +2581,36 @@
                 "svc5.desc": "24/7 service, lead capture and automated support across channels like WhatsApp, websites and applications.",
                 "svc6.title": "Technical Services",
                 "svc6.desc": "Assembly, maintenance, repair and technical support for computers and IT infrastructure.",
+                "prod.eyebrow": "Debugcenter Products",
+                "prod.title": "We also build and run our own products.",
+                "prod.desc": "Beyond client projects, we operate our own software in production — living proof of what our engineering can deliver and sustain day to day.",
+                "prod.live": "Live",
+                "prod1.tag": "SaaS · Business management",
+                "prod1.tagline": "“Simple management for businesses that mean it.”",
+                "prod1.desc": "A cloud-based business management platform for Mozambican small and medium businesses. It runs straight in the browser — no install, no credit card — and centralises stock, sales, finance, suppliers and team permissions in a single dashboard.",
+                "prod1.f1": "Real-time inventory with automatic low-stock alerts",
+                "prod1.f2": "Fast sales & POS, with daily, weekly and monthly performance",
+                "prod1.f3": "Cash flow & finance: revenue, expenses and profit analysis",
+                "prod1.f4": "Supplier management and purchase planning",
+                "prod1.f5": "Visual reports and dashboards on revenue and best-selling products",
+                "prod1.f6": "Role-based user access control",
+                "prod1.f7": "Automatic cloud backups and encrypted data",
+                "prod1.for": "Built for retail stores, restaurants, warehouses, distributors, pharmacies and stationery shops.",
+                "prod1.trial": "30-day free trial, no credit card required.",
+                "prod1.cta": "Open Controlla",
+                "prod2.tag": "Marketplace · Real estate",
+                "prod2.tagline": "“The platform growing fastest in Mozambique.”",
+                "prod2.desc": "A real-estate classifieds platform connecting property owners with people looking for a house, apartment, room or land across the country. Focused on simplicity, security and verified listings.",
+                "prod2.f1": "Search by location, property type and price range",
+                "prod2.f2": "Separate modes for buying and renting",
+                "prod2.f3": "Interactive map to browse available properties",
+                "prod2.f4": "Properties audited and verified before publishing",
+                "prod2.f5": "Featured spots for new listings in popular areas",
+                "prod2.f6": "User dashboard to publish and manage listings",
+                "prod2.f7": "Direct contact with the lister via WhatsApp",
+                "prod2.for": "Built for owners who want to list and for anyone searching for their next home in Mozambique.",
+                "prod2.note": "HubHouse is not a real-estate agency: it doesn't take part in negotiations or financial transactions between users.",
+                "prod2.cta": "Explore HubHouse",
                 "why.eyebrow": "Why choose us?",
                 "why.title": "Technical precision, closeness and delivery without theatrics.",
                 "why1.title": "Tailored solutions",
